@@ -1216,15 +1216,65 @@ svg {
 
 .thank-you-page {
   min-height: 100vh;
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
 }
 
 .thank-you-page main {
+  flex: 1 0 auto;
+  position: relative;
+  z-index: 1;
   background: #e5e1da;
 }
 
+.thank-you-page .site-footer {
+  position: relative;
+  z-index: 2;
+  flex-shrink: 0;
+  margin-top: 0;
+  clear: both;
+}
+
+.thank-you-page .mobile-actions {
+  display: none !important;
+}
+
 .thank-you-section {
-  min-height: clamp(420px, 52vh, 620px);
-  padding-bottom: clamp(110px, 12vw, 160px);
+  position: relative;
+  z-index: 1;
+  min-height: auto;
+  padding-top: clamp(80px, 8vw, 120px);
+  padding-bottom: clamp(220px, 18vw, 300px);
+  overflow: visible;
+}
+
+.thank-you-page .legal-layout {
+  display: block;
+  max-width: 860px;
+  margin-inline: auto;
+}
+
+.thank-you-page .legal-sidebar {
+  position: static;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0;
+  margin-top: 34px;
+}
+
+.thank-you-page .legal-sidebar p {
+  grid-column: 1 / -1;
+}
+
+.thank-you-page .legal-content {
+  position: relative;
+  z-index: 1;
+  margin-bottom: 0;
+}
+
+.thank-you-page .site-footer {
+  margin-top: clamp(48px, 7vw, 96px);
 }
 
 .legal-layout {
@@ -1891,6 +1941,10 @@ svg {
     padding-bottom: 62px;
   }
 
+  body.thank-you-page {
+    padding-bottom: 0;
+  }
+
   .container {
     width: min(calc(100% - 28px), var(--container));
   }
@@ -1975,6 +2029,10 @@ svg {
   .thank-you-section {
     min-height: auto;
     padding-bottom: 136px;
+  }
+
+  .thank-you-page .legal-sidebar {
+    grid-template-columns: 1fr;
   }
 
   .legal-content {
