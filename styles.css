@@ -1210,7 +1210,21 @@ svg {
 }
 
 .legal-page {
+  padding: clamp(68px, 8vw, 98px) 0 clamp(82px, 9vw, 118px);
   background: #e5e1da;
+}
+
+.thank-you-page {
+  min-height: 100vh;
+}
+
+.thank-you-page main {
+  background: #e5e1da;
+}
+
+.thank-you-section {
+  min-height: clamp(420px, 52vh, 620px);
+  padding-bottom: clamp(110px, 12vw, 160px);
 }
 
 .legal-layout {
@@ -1952,6 +1966,15 @@ svg {
 
   .legal-hero {
     padding: 84px 0 68px;
+  }
+
+  .legal-page {
+    padding: 56px 0 96px;
+  }
+
+  .thank-you-section {
+    min-height: auto;
+    padding-bottom: 136px;
   }
 
   .legal-content {
