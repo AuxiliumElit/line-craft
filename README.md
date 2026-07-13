@@ -18,7 +18,7 @@ Then visit `http://localhost:8000`.
 2. Confirm the final domain, then update canonical, Open Graph, schema, `robots.txt`, and `sitemap.xml`.
 3. Keep portfolio images compressed to WebP or AVIF with descriptive filenames and alt text.
 4. Add confirmed license, Pennsylvania contractor registration, insurance, warranty, and business-hour information if applicable.
-5. Deploy on Netlify with Forms detection enabled so the estimate form appears in the Netlify Forms dashboard.
+5. Deploy on Netlify with Forms detection enabled so the `estimate` form appears in the Netlify Forms dashboard, then submit a live test and confirm the redirect to `thank-you.html`.
 6. Validate the LocalBusiness schema with Google Rich Results Test.
 7. Add Google Search Console, analytics, conversion tracking, and a privacy policy before running ads.
 

@@ -122,23 +122,6 @@ function showFormStatus(type, title, message) {
   }
 }
 
-function encodeNetlifyForm(form) {
-  const formData = new FormData(form);
-  return new URLSearchParams(formData).toString();
-}
-
-async function submitNetlifyForm(form) {
-  const response = await fetch("/", {
-    method: "POST",
-    headers: { "Content-Type": "application/x-www-form-urlencoded" },
-    body: encodeNetlifyForm(form),
-  });
-
-  if (!response.ok) {
-    throw new Error(`Netlify form submission failed with status ${response.status}`);
-  }
-}
-
 if (estimateForm && humanAnswerInput) {
   setHumanChallenge();
 
@@ -171,29 +154,13 @@ if (estimateForm && humanAnswerInput) {
       humanAnswerInput.reportValidity();
       humanAnswerInput.focus();
     } else {
-      event.preventDefault();
       humanAnswerInput.setCustomValidity("");
       setSubmitState("sending");
-
-      submitNetlifyForm(estimateForm)
-        .then(() => {
-          estimateForm.reset();
-          setHumanChallenge();
-          setSubmitState("sent");
-          showFormStatus(
-            "success",
-            "Thank you. Your estimate request was sent.",
-            "LineCraft received your message and will reply as soon as possible."
-          );
-        })
-        .catch(() => {
-          setSubmitState("idle");
-          showFormStatus(
-            "error",
-            "We could not send the form.",
-            "Please try again after deployment on Netlify, or email linecrafttile@gmail.com directly."
-          );
-        });
+      showFormStatus(
+        "success",
+        "Sending your estimate request...",
+        "Please wait while Netlify receives your message."
+      );
     }
   });
 }
