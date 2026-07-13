@@ -1,0 +1,16 @@
+{
+  "name": "LineCraft Tile & Floors",
+  "short_name": "LineCraft",
+  "description": "Professional tile and flooring installation serving Philadelphia and nearby communities.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#252525",
+  "theme_color": "#252525",
+  "icons": [
+    {
+      "src": "assets/linecraft-mark.webp",
+      "sizes": "512x512",
+      "type": "image/webp"
+    }
+  ]
+}
